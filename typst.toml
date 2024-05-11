@@ -1,0 +1,15 @@
+[package]
+name = "cheatsheet"
+version = "0.1.0"
+entrypoint = "lib.typ"
+repository = "https://github.com/kamack38/cheatsheet-template"
+authors = ["kamack38"]
+license = "MIT"
+description = "Typst template for creating cheatsheets"
+keywords = ["cheat", "sheet"]
+categories = ["fun"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
