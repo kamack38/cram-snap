@@ -32,7 +32,8 @@ If you want to change an existing project ot use this template, you can add a sh
 
 #show: cheatsheet.with(
   title: [Cheatsheet],
+  subtitle: [Cheatsheet for an amazing program],
   icon: image("icon.png"),
+  column-number: 3,
 )
-
 ```
