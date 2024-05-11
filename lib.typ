@@ -1,4 +1,4 @@
-#let cheatsheet(
+#let cram-snap(
   title: none,
   icon: none,
   column-number: 2,

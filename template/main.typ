@@ -1,4 +1,4 @@
-#import "@preview/cheatsheet:0.1.0": cheatsheet
+#import "@preview/cram-snap:0.1.0": cram-snap
 
 #set page(
   paper: "a4",
@@ -7,7 +7,7 @@
 )
 #set text(font: "Arial", size: 11pt)
 
-#show: cheatsheet.with(
+#show: cram-snap.with(
   title: [Git Cheatsheet],
   icon: image("assets/git-icon.svg"),
 )

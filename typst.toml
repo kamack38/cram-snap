@@ -1,13 +1,13 @@
 [package]
-name = "cheatsheet"
+name = "cram-snap"
 version = "0.1.0"
 entrypoint = "lib.typ"
-repository = "https://github.com/kamack38/cheatsheet-template"
+repository = "https://github.com/kamack38/cram-snap"
 authors = ["kamack38"]
 license = "MIT"
 description = "Typst template for creating cheatsheets"
-keywords = ["cheat", "sheet"]
-categories = ["fun"]
+keywords = ["cheat", "sheet", "cheatsheet"]
+categories = ["flyer"]
 
 [template]
 path = "template"
