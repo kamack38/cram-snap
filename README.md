@@ -36,4 +36,9 @@ If you want to change an existing project ot use this template, you can add a sh
   icon: image("icon.png"),
   column-number: 3,
 )
+
+#table(
+    table.header[Great heading],
+    [Closing the program], [Type `:q`]    
+)
 ```
