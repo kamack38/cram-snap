@@ -1,45 +1,69 @@
-#let cheatsheet(
-  title: none,
-  icon: none,
-  column-number: 2,
-  subtitle: none,
-  doc,
-) = {
-  let table_stroke(color) = (x, y) => (
-    left: none, right: none, top: none, bottom: if y == 0 { color } else { 0pt },
-  )
+#import "@preview/cheatsheet:0.1.0": cheatsheet
 
-  let table_fill(color) = (x, y) => {
-    if calc.odd(y) {
-      rgb(color)
-    } else { none }
-  }
+#set page(
+  paper: "a4",
+  flipped: true,
+  margin: 1cm,
+)
+#set text(font: "Arial", size: 11pt)
 
-  set table(
-    align: left + horizon, columns: (2fr, 3fr),
-    fill: table_fill(rgb("F2F2F2")), stroke: table_stroke(rgb("21222C")),
-  )
+#show: cheatsheet.with(
+  title: [Git Cheatsheet],
+  icon: image("assets/git-icon.svg"),
+)
 
-  set table.header(repeat: false)
+#table(
+  table.header[Adding changes],
+  [`git add -u <path>`],  [Add all tracked files to the *staging area*.],
+  [`git add -p <path>`], [Interactively pick which files to *stage*],
+)
 
-  show table.cell.where(y: 0): set text(weight: "bold", size: 12pt)
-  show table.cell.where(y: 0): it => {
-    table.cell(colspan: 2)[#it]
-  }
+#table(
+  table.header[Storing changes],
+  [`git stash [push] [path]`], [Put current changes in the *working tree* into *stash* for later use.],
+  [`git stash pop`], [Apply stored *stash* content into *working tree*, and clear *stash*.],
+  [`git stash drop`], [Delete a specific *stash* from all the previous *stashes*.],
+)
 
-  columns(column-number)[
-    #align(center)[
-      #box(height: 20pt)[
-        #if icon != none {
-          set image(height: 100%)
-          box(icon, baseline: 25%)
-        }
-        #text(17pt, title)
-      ]
+#table(
+  table.header[Inspecting diffs],
+  [`git diff [path]`], [Show changes between *working tree* and *staging area*.],
+  [`git diff --cached/--staged [path]`], [Shows any changes between the *staging area* and the *repository*.],
+)
 
-      #text(10pt, subtitle)
-    ]
+#table(
+  table.header[Reverting changes],
+  [`git rebase`], [Rebase the current branch on top of another specified branch.],
+  [`git rebase -i [commit sha]`], [Start an interactive rebase.],
+  [`git revert [commit sha]`], [Create a new commit, reverting changes from the specified commit. It generates an *inversion* of changes.],
+  [`git checkout <path>`], [Discard changes in the *working tree*.],
+  [`git restore [-W/--worktree] <path>`], [Discard changes in the *working tree*.],
+  [`git restore -S/--staged <path>`], [Remove a file from a *staging area*.],
+  [`git restore -SW <path>`], [Discard changes in the *working tree* and to the *staged* files],
+  [`git reset <path>`], [Remove a file from the *staging area*.],
+  [`git reset [mode] HEAD^`], [Remove the latest *commit* from the current branch and:
+  - `--soft` - keep file changes in the
+    *working tree* and *stage* them;
+  - `--mixed` - keep file changes;
+  - `--keep` - reset only files which are
+    different between current `HEAD` and the
+    last commit
+  - `--hard` - do *not* keep file changes.],
+)
 
-    #doc
-  ]
-}
+#table(
+  table.header[Tagging commits],
+  [`git tag`], [List all tags.],
+  [`git tag <name> [commit sha]`], [Create a tag reference named `name` for the current or specific commit.],
+  [`git tag -a <name> -m <message>`], [Create an annotated tag with the given message.],
+  [`git tag -d <name>`], [Delete the tag with the given name.],
+)
+
+#table(
+  table.header[Synchronizing repositories],
+  [`git fetch [remote]`], [Fetch changes from the *remote*, but not update tracking branches.],
+  [`git fetch --prune [remote]`], [Delete remote refs that were removed from the *remote* repository.],
+  [`git pull [remote]`], [Fetch changes from the *remote* and *merge* current branch with its upstream.],
+  [`git pull -r/--rebase [remote]`], [Fetch changes from the *remote* and *rebase* current branch on top of the upstream],
+  [`git push -u [remote] [branch]`], [Push local branch to *remote* repository. Set its copy as an upstream.],
+)
