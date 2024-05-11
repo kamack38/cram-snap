@@ -9,7 +9,7 @@
 
 #show: cram-snap.with(
   title: [Git Cheatsheet],
-  icon: image("assets/git-icon.svg"),
+  icon: image("git-icon.svg"),
 )
 
 #table(
