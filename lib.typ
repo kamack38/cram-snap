@@ -37,7 +37,7 @@
 
   set table.header(repeat: false)
 
-  show table.cell.where(y: 0): set text(weight: "bold", size: 1.10em)
+  show table.cell.where(y: 0): set text(weight: "bold", size: 1.09em)
 
   columns(column-number)[
     #align(center)[
