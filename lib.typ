@@ -37,19 +37,19 @@
 
   set table.header(repeat: false)
 
-  show table.cell.where(y: 0): set text(weight: "bold", size: 1.09em)
+  show table.cell.where(y: 0): set text(weight: "bold", size: 1.2em)
 
   columns(column-number)[
     #align(center)[
-      #box(height: 1.82em)[
+      #box(height: 1.8em)[
         #if icon != none {
           set image(height: 100%)
-          box(icon, baseline: 25%)
+          box(icon, baseline: 20%)
         }
-        #text(1.55em, title)
+        #text(1.6em, title)
       ]
 
-      #text(0.91em, subtitle)
+      #text(0.9em, subtitle)
     ]
 
     #doc
