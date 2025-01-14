@@ -3,8 +3,8 @@
   icon: none,
   column-number: 2,
   subtitle: none,
-  fill-color: "F2F2F2",
-  stroke-color: "21222C",
+  fill-colour: "F2F2F2",
+  stroke-colour: "21222C",
   doc,
 ) = {
   let table_stroke(color) = (
@@ -33,8 +33,8 @@
   set table(
     align: left + horizon,
     columns: (2fr, 3fr),
-    fill: table_fill(rgb(fill-color)),
-    stroke: table_stroke(rgb(stroke-color)),
+    fill: table_fill(rgb(fill-colour)),
+    stroke: table_stroke(rgb(stroke-colour)),
   )
 
   set table.header(repeat: false)
