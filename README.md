@@ -27,7 +27,8 @@ arguments:
 - `icon`: Image that appears next to the title
 - `column-number`: Number of columns
 - `fill-color` : rgb color of filled rows (defaults to `#F2F2F2`)
-- `stroke-color` rgb color of the stroke under each heading (defaults to `21222C`)
+- `stroke-color` rgb color of the stroke under each heading (defaults to
+  `21222C`)
 
 The `theader` function is a wrapper around the `table.header` function that
 creates a header and takes `colspan` as argument to span the header across
@@ -37,7 +38,7 @@ If you want to change an existing project to use this template, you can add a
 show rule like this at the top of your file:
 
 ```typst
-#import "@preview/cram-snap:0.2.1": *
+#import "@preview/cram-snap:0.2.2": *
 
 #set page(paper: "a4", flipped: true, margin: 1cm)
 #set text(font: "Arial", size: 11pt)
