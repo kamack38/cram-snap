@@ -11,7 +11,7 @@ on the dashboard and searching for `cram-snap`.
 
 Alternatively, you can use the CLI to kick this project off using the command
 
-```
+```bash
 typst init @preview/cram-snap
 ```
 
@@ -28,7 +28,7 @@ arguments:
 - `column-number`: Number of columns
 - `fill-color` : rgb color of filled rows (defaults to `#F2F2F2`)
 - `stroke-color` rgb color of the stroke under each heading (defaults to
-  `21222C`)
+  `#21222C`)
 
 The `theader` function is a wrapper around the `table.header` function that
 creates a header and takes `colspan` as argument to span the header across
